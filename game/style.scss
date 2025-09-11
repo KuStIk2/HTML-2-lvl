@@ -1,0 +1,79 @@
+$widhtDuck: 100px;
+$countDuck: 4;
+
+
+
+
+
+@for $i from 1 through $countDuck {
+    @keyframes duck-fly-#{$i} {
+  0% {
+   left: -$widhtDuck;
+   top: random(90) + vh;
+  }
+  50%{
+    left: random(60) + vw;
+    top: random(90) + vh;
+  }
+  100% {
+    left: 100vw;
+    top: random(90) + vh;
+  }
+}
+
+}
+
+
+
+
+
+body{
+   counter-reset: count;
+   height: 100vh;
+   margin: 0;
+   background-image: url(fon.jpg);
+   background-size: cover;
+   background-repeat: no-repeat;
+   background-position: center;
+   position: relative;
+   overflow: hidden;
+}
+
+
+
+.counte-info{position: absolute;
+            top: 24px;
+            right: 24px;
+            color: white;
+&::before{
+    content: counter(count);
+}
+}
+
+
+.duck{position: absolute;
+    &__img{
+        width: $widhtDuck;
+    }
+    @for $i from 1 through $countDuck {
+  &_#{$i} {animation: duck-fly-#{$i} 5s ease-in #{$i}s both;
+        }
+}
+    
+    }
+
+
+.duck-check{
+    position: absolute;
+    visibility: hidden;
+    left: -9999999999999;
+    &:checked {
+    counter-increment: count;
+   
+}
+ &:checked ~ label{
+    display: none;
+ }
+    
+
+}

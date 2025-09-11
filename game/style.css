@@ -1,0 +1,108 @@
+@keyframes duck-fly-1 {
+  0% {
+    left: -100px;
+    top: 63vh;
+  }
+  50% {
+    left: 52vw;
+    top: 83vh;
+  }
+  100% {
+    left: 100vw;
+    top: 13vh;
+  }
+}
+@keyframes duck-fly-2 {
+  0% {
+    left: -100px;
+    top: 52vh;
+  }
+  50% {
+    left: 1vw;
+    top: 70vh;
+  }
+  100% {
+    left: 100vw;
+    top: 22vh;
+  }
+}
+@keyframes duck-fly-3 {
+  0% {
+    left: -100px;
+    top: 12vh;
+  }
+  50% {
+    left: 39vw;
+    top: 83vh;
+  }
+  100% {
+    left: 100vw;
+    top: 84vh;
+  }
+}
+@keyframes duck-fly-4 {
+  0% {
+    left: -100px;
+    top: 65vh;
+  }
+  50% {
+    left: 6vw;
+    top: 1vh;
+  }
+  100% {
+    left: 100vw;
+    top: 64vh;
+  }
+}
+body {
+  counter-reset: count;
+  height: 100vh;
+  margin: 0;
+  background-image: url(fon.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.counte-info {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  color: white;
+}
+.counte-info::before {
+  content: counter(count);
+}
+
+.duck {
+  position: absolute;
+}
+.duck__img {
+  width: 100px;
+}
+.duck_1 {
+  animation: duck-fly-1 5s ease-in 1s both;
+}
+.duck_2 {
+  animation: duck-fly-2 5s ease-in 2s both;
+}
+.duck_3 {
+  animation: duck-fly-3 5s ease-in 3s both;
+}
+.duck_4 {
+  animation: duck-fly-4 5s ease-in 4s both;
+}
+
+.duck-check {
+  position: absolute;
+  visibility: hidden;
+  left: -9999999999999;
+}
+.duck-check:checked {
+  counter-increment: count;
+}
+.duck-check:checked ~ label {
+  display: none;
+}/*# sourceMappingURL=style.css.map */
